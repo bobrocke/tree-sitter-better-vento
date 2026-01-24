@@ -3,20 +3,37 @@
   "name": "vento",
   "rules": {
     "template": {
-      "type": "REPEAT",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "content"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "tag"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "front_matter"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "content"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "tag"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     "content": {
       "type": "PREC_RIGHT",
@@ -81,6 +98,35 @@
               "value": "-}}"
             }
           ]
+        }
+      ]
+    },
+    "front_matter": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "---"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^\\n]+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "\\n"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "---"
         }
       ]
     },
@@ -161,7 +207,7 @@
     },
     "keyword": {
       "type": "PATTERN",
-      "value": "[a-z>][a-zA-Z]*? |if|for|include|set|import|export|layout|function"
+      "value": "[a-z>][a-zA-Z]*? |if|from|of|for|include|set|import|export|layout|function"
     },
     "code_snippet": {
       "type": "SEQ",
@@ -178,7 +224,7 @@
     },
     "close_keyword": {
       "type": "PATTERN",
-      "value": "\\/([a-zA-Z]+|if|for|include|set|import|export|layout|function)"
+      "value": "\\/([a-zA-Z]+|if|from|of|for|include|set|import|export|layout|function)"
     },
     "comment": {
       "type": "PATTERN",
@@ -200,5 +246,6 @@
     }
   ],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
