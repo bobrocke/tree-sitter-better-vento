@@ -25,6 +25,11 @@
     }
   },
   {
+    "type": "front_matter",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "tag",
     "named": true,
     "fields": {},
@@ -65,11 +70,19 @@
           "named": true
         },
         {
+          "type": "front_matter",
+          "named": true
+        },
+        {
           "type": "tag",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "---",
+    "named": false
   },
   {
     "type": "-}}",
