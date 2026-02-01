@@ -28,12 +28,11 @@ module.exports = grammar({
 
     _expression: ($) =>
       choice(
-        // "Solo keywords" are just code blocks
-        alias($.code_snippet, $.code),
-        alias($.keyword, $.code),
-        alias($.close_keyword, $.keyword),
-        seq($.keyword, alias($._code, $.code)),
         $.comment,
+        alias($.close_keyword, $.keyword),
+        prec(2, seq($.keyword, alias($._code, $.code))),
+        prec(3, $.keyword),
+        prec(1, alias($.code_snippet, $.code)),
       ),
 
     filter: ($) => repeat1(seq("|>", alias($._code, $.code))),
