@@ -3,7 +3,7 @@ name = "tree-sitter-vento"
 description = "Vento grammar for tree-sitter"
 version = "0.20.0"
 authors = [
-    "Matthew Taylor"
+    "Matthew Taylor and Bob Rockefeller"
 ]
 license = "MIT"
 readme = "bindings/rust/README.md"

@@ -7,7 +7,7 @@
     "parser",
     "json"
   ],
-  "author": "Matthew Taylor",
+  "author": "Matthew Taylor and Bob Rockefeller",
   "license": "MIT",
   "dependencies": {
     "nan": "^2.14.0"
