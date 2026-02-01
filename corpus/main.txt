@@ -291,3 +291,42 @@ Test parens
   (tag
     (code))
   (content))
+
+====================
+Keywords - Set, Layout, Echo, Slot, Default
+====================
+
+{{ set title = "Hello World" }}
+{{ layout "base.vto" }}
+{{ echo message }}
+{{ slot content }}
+{{ slot content }}
+  Default slot content
+{{ /slot }}
+{{ default value }}
+
+---
+
+(template
+  (tag
+    (keyword)
+    (code))
+  (tag
+    (keyword)
+    (code))
+  (tag
+    (keyword)
+    (code))
+  (tag
+    (keyword)
+    (code))
+  (tag
+    (keyword)
+    (code))
+  (content)
+  (tag
+    (keyword))
+  (tag
+    (keyword)
+    (code))
+  (content))

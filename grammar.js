@@ -38,16 +38,14 @@ module.exports = grammar({
 
     filter: ($) => repeat1(seq("|>", alias($._code, $.code))),
 
-    // General rule for keyword tags
-    // It just tries to match the first word in a tag block,
-    // plus any other special characters that might be present
+    // Vento keywords
     keyword: () =>
-      /[a-z>][a-zA-Z]*? |if|from|of|for|include|set|import|export|layout|function/,
+      /if|else|for|from|of|include|set|import|export|layout|function|echo|slot|default/,
 
     code_snippet: ($) => seq(/[a-zA-Z>\.\(\)\!_\?]/, $._code),
 
     close_keyword: () =>
-      /\/([a-zA-Z]+|if|from|of|for|include|set|import|export|layout|function)/,
+      /\/(if|for|include|set|import|export|layout|function|echo|slot|default)/,
 
     comment: () => /#[^#]+#/,
   },

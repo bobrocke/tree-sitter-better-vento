@@ -222,7 +222,7 @@
     },
     "keyword": {
       "type": "PATTERN",
-      "value": "[a-z>][a-zA-Z]*? |if|from|of|for|include|set|import|export|layout|function"
+      "value": "if|else|for|from|of|include|set|import|export|layout|function|echo|slot|default"
     },
     "code_snippet": {
       "type": "SEQ",
@@ -239,7 +239,7 @@
     },
     "close_keyword": {
       "type": "PATTERN",
-      "value": "\\/([a-zA-Z]+|if|from|of|for|include|set|import|export|layout|function)"
+      "value": "\\/(if|for|include|set|import|export|layout|function|echo|slot|default)"
     },
     "comment": {
       "type": "PATTERN",
