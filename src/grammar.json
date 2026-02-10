@@ -155,7 +155,7 @@
             "name": "_tag_start_delimiter_comment_simple"
           },
           "named": false,
-          "value": "{{>"
+          "value": "{{#"
         },
         {
           "type": "ALIAS",
@@ -164,7 +164,7 @@
             "name": "_tag_start_delimiter_comment_trim_whitespace"
           },
           "named": false,
-          "value": "{{->"
+          "value": "{{#-"
         }
       ]
     },
