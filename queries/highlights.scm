@@ -1,6 +1,5 @@
 (comment) @comment @spell
 
-; Tag node types
 (if_tag_start) @keyword.control
 (if_tag_end) @keyword.control
 (else_if_tag) @keyword.control
@@ -23,11 +22,8 @@
 (fragment_tag_end) @keyword
 (javascript_tag) @keyword
 
-; Identifiers
 (identifier) @variable
 
-; Operators
 ("|>") @operator
 
-; Code injections
 (code) @none
