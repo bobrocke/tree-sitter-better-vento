@@ -1,11 +1,7 @@
 <h1>
 <img align="left" width="40" src="https://raw.githubusercontent.com/ventojs/vento/main/docs/favicon.svg"></img>
-tree-sitter-better-vento
+tree-sitter-vento
 </h1>
-
-An improved [tree-sitter](https://github.com/tree-sitter/tree-sitter) parser for the [Vento](https://vento.js.org/) templating language. The original [tree-sitter-vento](https://github.com/ventojs/tree-sitter-vento) parser provided basic syntax parsing but lacked support for language injections, closing keywords (for example `{{ /for }}` and `{{ /if }}`), and local variable scoping. This enhanced version addresses these limitations, making it suitable for use in code editors and IDEs that rely on tree-sitter for syntax highlighting, code navigation, and other language features.
-
-This version is based on the original (thanks, [@wrapperup](https://github.com/wrapperup)).
 
 ## Features
 
@@ -36,15 +32,3 @@ The `locals.scm` query enables editors to track variable scopes, particularly us
   </a>
 {{ /for }}
 ```
-
-In this example, the variable `i` is properly scoped within the for loop, allowing editors to provide accurate code intelligence features like:
-
-- Variable highlighting
-- Go-to-definition
-- Scope-aware autocomplete
-- Unused variable detection
-
-## Improvements
-
-- Included closing closing keywords (for example `{{ /for }}` and `{{ /if }}`)
-- Injected YAML for front matter
